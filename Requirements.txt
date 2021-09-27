@@ -1,0 +1,30 @@
+﻿﻿Welcome to Web Apis
+
+I want you to create a Rest Web api for storing Points (like in coordinates)
+Point has x and y.
+
+I should be able to:
+[Done] - Add new point
+[Done] - Get a single point
+[Done] - Get all points
+[Done] - Delete a point
+
+Extra:
+- Assign point to a point-list
+- Get points by list (filtering):
+	[Done] 1. We have separate resource: we can create and delete pointlist
+	[Done] 2. When creating new point we can specify the pointlist id
+	[Done] 3. /pointlist/3/coordinates should return the points.
+
+Non-function requirement: Controller -> Services -> Repositories -> dbContext
+
+1. C# asp.net web api
+2. What is restfull api.
+3. What is a Postman, how can it help in api development?
+4. What is swagger?
+5. What is HttpGet,HttpPost,HttpDelete
+6. FromUrl vs FromBody
+
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio
+https://www.youtube.com/watch?v=vN9NRqv7xmY
+https://www.c-sharpcorner.com/article/create-simple-web-api-in-asp-net-mvc/
