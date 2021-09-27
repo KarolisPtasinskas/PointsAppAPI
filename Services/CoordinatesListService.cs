@@ -24,13 +24,9 @@ namespace PointsAppWebAPI.Services
             return await _repository.GetCoordinates(id);
         }
 
-        public async Task Post(string name)
+        public async Task Post(CoordinatesList coordinateList)
         {
-            var cooList = new CoordinatesList()
-            {
-                Name = name
-            };
-            await _repository.Post(cooList);
+            await _repository.Post(coordinateList);
         }
 
         public async Task Delete(int id)

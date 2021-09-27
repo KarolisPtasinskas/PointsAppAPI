@@ -19,25 +19,34 @@ namespace PointsAppWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Coordinate>>> GetAll()
         {
-            return await _service.GetAll();
+            return Ok(await _service.GetAll());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Coordinate>> GetById(int id)
         {
-            return await _service.GetById(id);
+            var coord = await _service.GetById(id);
+
+            if (coord == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(coord);
         }
 
-        [HttpPost("{x}, {y}, {cooList}")]
-        public async Task Post(int x, int y, int cooList)
+        [HttpPost]
+        public async Task<IActionResult> Post(Coordinate coordinate)
         {
-            await _service.Post(x, y, cooList);
+            await _service.Post(coordinate);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public async Task Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             await _service.Delete(id);
+            return NoContent();
         }
     }
 }

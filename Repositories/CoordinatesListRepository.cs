@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using PointsAppWebAPI.Data;
 using PointsAppWebAPI.Models;
 using System.Collections.Generic;
@@ -43,7 +42,7 @@ namespace PointsAppWebAPI.Repositories
 
         public async Task Post(CoordinatesList coordinatesList)
         {
-            await _context.CoordinatesLists.AddAsync(coordinatesList);
+            _context.CoordinatesLists.Add(coordinatesList);
             await _context.SaveChangesAsync();
         }
 

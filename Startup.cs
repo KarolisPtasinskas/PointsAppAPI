@@ -27,12 +27,12 @@ namespace PointsAppWebAPI
             services.AddDbContext<PointsAppContext>(d => d.UseSqlServer(connectionString));
 
             //Repositories
-            services.AddScoped<CoordinatesRepository>();
-            services.AddScoped<CoordinatesListRepository>();
+            services.AddTransient<CoordinatesRepository>();
+            services.AddTransient<CoordinatesListRepository>();
 
             //Services
-            services.AddScoped<CoordinatesService>();
-            services.AddScoped<CoordinatesListService>();
+            services.AddTransient<CoordinatesService>();
+            services.AddTransient<CoordinatesListService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

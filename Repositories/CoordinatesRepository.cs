@@ -27,7 +27,7 @@ namespace PointsAppWebAPI.Repositories
 
         public async Task Post(Coordinate coordinate)
         {
-            await _context.Coordinates.AddAsync(coordinate);
+            _context.Coordinates.Add(coordinate);
             await _context.SaveChangesAsync();
         }
 
